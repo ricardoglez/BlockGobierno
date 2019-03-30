@@ -14,6 +14,7 @@
 		 "permissions":[ "webNavigation", "activeTab", "tabs", "<all_urls>"],
 		 "content_scripts": [{
 			"matches": ["http://*.gob.mx/*","https://*.gob.mx/*"],
+			"css":[ "styles.css"],
 			"js": [
 				"bundle.js"
 			],
@@ -23,7 +24,7 @@
 		"/images/puercos/p1.png",
 		"./images/puercos/p1.png",
 		"*.png",
-		
+		"styles.css",
 		"chrome-extension://lfpikeigaahlohbecmcnbclhpiicjejc/images/puercos/p1.png"
 	 ],
 	 "manifest_version": 2

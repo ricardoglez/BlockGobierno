@@ -1,5 +1,6 @@
 
-import { BaseCSS } from 'styled-bootstrap-grid';
+import 'styles/styles.scss';
+
 import React from 'react';
 import { render }from 'react-dom';
 

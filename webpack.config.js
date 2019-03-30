@@ -106,6 +106,10 @@ var options = {
       template: 'src/popup/popup.html',
       filename: "./popup.html"
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      filename: "./index.html"
+    }),
     new MiniCssExtractPlugin({
       filename:"styles.css",
       chunkFilename:"[name].css",
@@ -125,6 +129,10 @@ var options = {
       }
     }]),
   ],
+  devServer:{
+    contentBase: path.resolve(__dirname, 'build'),
+    hot: true
+  },
   devtool: 'eval-source-map'
 };
 
