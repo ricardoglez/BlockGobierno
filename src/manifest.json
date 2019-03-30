@@ -20,7 +20,10 @@
 			"run_at" : "document_end"
 	 }],
 	 "web_accessible_resources": [
-		"bundle.js"
+		"/images/puercos/p1.png",
+		"./images/puercos/p1.png",
+		"*.png",
+		"chrome-extension://lfpikeigaahlohbecmcnbclhpiicjejc/images/puercos/p1.png"
 	 ],
 	 "manifest_version": 2
   }

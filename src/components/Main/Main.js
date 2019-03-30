@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'styled-bootstrap-grid';
-import pork0 from 'images/'
+
+var imgURL = chrome.extension.getURL("images/puercos/p1.png");
 
 const Main = () =>{
   return (
@@ -11,7 +12,9 @@ const Main = () =>{
         justifyContent:'center',
         alignItems:'center'
        } }>
-        <Col sm={1} alignItems='center' justifyContent='center'>1</Col>
+        <Col sm={1} alignItems='center' justifyContent='center'>
+          <img src={imgURL} />
+        </Col>
         <Col sm={2} alignItems='center' justifyContent='center'>2</Col>
         <Col sm={2} alignItems='center' justifyContent='center'>3</Col>
         <Col sm={2} alignItems='center' justifyContent='center'>4</Col>
