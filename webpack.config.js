@@ -97,8 +97,8 @@ var options = {
     ],
     alias: {
       // Create aliases
-      icons: path.resolve(__dirname, 'src/icons') ,// src/assets/icons alias
-      images: path.resolve(__dirname, 'src/images') // src/assets/images alias
+      icons: path.resolve(__dirname, 'src/icons') ,
+      images: path.resolve(__dirname, 'src/images') 
     }
   },
   plugins: [
