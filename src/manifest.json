@@ -23,6 +23,7 @@
 		"/images/puercos/p1.png",
 		"./images/puercos/p1.png",
 		"*.png",
+		
 		"chrome-extension://lfpikeigaahlohbecmcnbclhpiicjejc/images/puercos/p1.png"
 	 ],
 	 "manifest_version": 2
