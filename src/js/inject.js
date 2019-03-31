@@ -23,6 +23,7 @@ const createBlockOverlay = () => {
     overlay.style.color = '#fff';
     overlay.style.fontSize = '3em';
     overlay.style.top = '35px';
+    overlay.style.paddingTop = '30px';
     overlay.style.zIndex = '60';
     overlay.style.background = 'rgba(0,0,0,.8)';
 
