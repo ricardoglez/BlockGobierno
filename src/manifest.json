@@ -1,6 +1,6 @@
  {
     "name": "Ad Blocker Gob",
-    "version": "1.0",
+    "version": "0.0.0.1",
 		 "description": " ",
 		 "browser_action":{
 			"default_icon": {                    
