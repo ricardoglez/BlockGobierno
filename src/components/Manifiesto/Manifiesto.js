@@ -19,7 +19,7 @@ const Indicator = styled.strong`
 const ListItem = styled.li`
   display: flex;
   align-items:start;
-  font-size:.5em;
+  font-size:.3em;
   color:#000;
   font-weight:500;
 `;
@@ -29,7 +29,7 @@ const Manifiesto = ( { manifiesto } ) => {
   let listManifiesto = Object.keys( manifiesto ).map( mKey => {
     if( manifiesto[ mKey ].isActive ){ 
       console.log(manifiesto[mKey]);
-      return (<ListItem> <Indicator>{mKey}.</Indicator>  { manifiesto[ mKey ].label } </ListItem>)
+      return (<ListItem key={mKey}> <Indicator>{mKey}.</Indicator>  { manifiesto[ mKey ].label } </ListItem>)
     } 
   } );
 

@@ -22,9 +22,9 @@ const AlertWrapper = styled(Col)`
   margin:auto;
 `;
 
-const Alert = styled.h1`
+const Alert = styled.h3`
   font-weight: 900;
-  font-size:1em;
+  font-size:.5em;
   text-align:center;
   color: rgba(162, 34, 68, 1);
   margin-bottom:0px;
@@ -44,45 +44,76 @@ color:#ddd;
   font-weight:100;
 `;
 
-const Message = styled.h4`
-  font-size: 50% ;
+const Message = styled.h6`
+  font-size: .3em ;
   font-weight:500;
   text-align:center;
   color:#000;
   margin-bottom:25px;
 `;
 
-const Main = ( ) => {
-  return (
-    <div className='container' style={ {height: '100%' } }>
-      <Row>
-        <AlertWrapper>
-          <Row>
-            <Col justifyContent='center' alignItems='center'>
-              <Alert>
-              <img src={ isExtension ? alertURL : alerta } style={ { maxWidth:'50px ', marginRight: '3px'} }/> Alerta
-              </Alert>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={10} offset={1} alignItems='center' justifyContent='center'>
-              <Message>
-                Todas la maquinaria que conocemos dejará de funcionar en algún momento.
-              </Message>
-              <Message>
-                La máquina de movimiento perpetuo no existe.
-              </Message>
-            </Col>
-          </Row>
-        </AlertWrapper>
-      </Row>
-      <PorksUI/>
-      <Footer>
-        <Small> El Manifiesto Post-futurista, Franco, Berardi, Febrero 2009  </Small>
-      </Footer>
-    </div>
+const CloseButton = styled.button`
+  position:absolute;
+  right:2.5em;
+  height:35px;
+  font-size:12px;
+  border: none;
+  font-weight:700;
+  border-radius:35%;
+  background:transparent;
+`;
 
-  )
+
+
+class Main extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = { 
+      show: true,
+    }
+
+    this.handleShowPlugin = ()=>{
+      console.log('Clicked Change ');
+      this.setState({ show: !this.state.show });
+    }
+  }
+
+  render (){
+    if( !this.state.show ){
+      return  null
+    }
+    return (
+      <div className='container' style={ {height: '100%' } }>
+        <Row>
+          <CloseButton onClick={ this.handleShowPlugin }>Escape</CloseButton>
+          <AlertWrapper>
+            <Row>
+              <Col justifyContent='center' alignItems='center'>
+                <Alert>
+                <img src={ isExtension ? alertURL : alerta } style={ { maxWidth:'30px ', marginRight: '3px'} }/> Alerta
+                </Alert>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={10} offset={1} alignItems='center' justifyContent='center'>
+                <Message>
+                  Todas la maquinaria que conocemos dejará de funcionar en algún momento.
+                </Message>
+                <Message>
+                  La máquina de movimiento perpetuo no existe.
+                </Message>
+              </Col>
+            </Row>
+          </AlertWrapper>
+        </Row>
+        <PorksUI/>
+        <Footer>
+          <Small> El Manifiesto Post-futurista, Franco Berardi, Febrero 2009  </Small>
+        </Footer>
+      </div>
+  
+    )
+  }
 }
 
 export { Main };
