@@ -5,8 +5,10 @@ import styled from 'styled-components';
 const ManifiestoList = styled.ul`
   list-style:none;
   background:#EAEAEA;
-  border-radius: 5px;
-  padding:20px;
+  width:80%;
+  padding:24px;
+  border-radius:5px;
+  drop-shadow: 0px 0px 0px 5px #fff ;
   margin:25px auto;
 `;
 

@@ -6,7 +6,7 @@
 import { blockOverlay } from 'templates/blockOverlay.js';
 
 
-const createBlockOverlay = () => {
+const createBlockOverlay = ( ) => {
   console.log('injecting...');
 
   return new Promise( (resolve, reject) => {

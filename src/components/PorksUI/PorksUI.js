@@ -30,6 +30,8 @@ if( isExtension ){
 
 
 const PorksWrapper = styled.div`
+  position:absolute;
+  bottom:8%;
   display: flex ;
   flex: 1 ;
   height:100%;
@@ -86,6 +88,8 @@ const ImageResponsive = styled(Image)`
   filter      : drop-shadow( 0 0 60px rgba( 160, 160, 160,.6) )
  
 `;
+
+let port = null;
 
 const  PorkItem = ({ pork, src, onClick }) => {
   return (
@@ -231,7 +235,7 @@ class PorksUI extends React.Component{
       temporalPorks[ porkId ].isGlowing = true;
     
       this.setState( { porks: temporalPorks } ,() => {
-        
+        this.state.port.postMessage( { message: "hello"} );
       });
 
     }
@@ -260,6 +264,16 @@ class PorksUI extends React.Component{
 
   componentDidMount(){
     this.initializePorks();
+  
+     port = chrome.runtime.connect({name: 'someMessage'} );
+     console.log(port);
+     port.onMessage.addListener(function(message,sender){
+       console.log(message, sender);
+      if(message.greeting === "hello"){
+        alert(message.greeting);
+      }
+    });
+    this.setState( {port: port });
   }
   
   
