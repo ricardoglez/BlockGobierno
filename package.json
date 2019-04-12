@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --color --mode development",
-    "production": "rm -r build & NODE_ENV=production webpack --mode production --progress && cp -r src/icons build && cp -r src/images build"
+    "production": "rm -r build & NODE_ENV=production webpack --mode production --progress && cp -r src/icons build && cp -r src/images build && cp src/background.js build"
   },
   "author": "",
   "license": "ISC",

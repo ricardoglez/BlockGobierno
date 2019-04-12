@@ -97,7 +97,7 @@ class Main extends React.Component{
             <Row>
               <Col sm={10} offset={1} alignItems='center' justifyContent='center'>
                 <Message>
-                  Todas la maquinaria que conocemos dejará de funcionar en algún momento.
+                  Todas las maquinarias que conocemos dejarán de funcionar en algún momento.
                 </Message>
                 <Message>
                   La máquina de movimiento perpetuo no existe.

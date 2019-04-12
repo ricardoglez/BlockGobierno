@@ -9,4 +9,8 @@
       </a>
      </section>
   </body>
+  <script>
+    var port   =   chrome.runtime.connect({name: "popup-port"});
+    port.postMessage({status:"poppedup"});
+  </script>
 </html>
