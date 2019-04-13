@@ -12,6 +12,7 @@ import puerco6 from "images/puercos/p6.png";
 import puerco7 from "images/puercos/p7.png";
 
 import Manifiesto from '../Manifiesto';
+import AnimatedPork from '../AnimatedPork';
 
 let puercoURL1 , puercoURL2, puercoURL3, puercoURL4, puercoURL5, puercoURL6, puercoURL7 = null; 
 
@@ -264,16 +265,18 @@ class PorksUI extends React.Component{
 
   componentDidMount(){
     this.initializePorks();
-  
-     port = chrome.runtime.connect({name: 'someMessage'} );
-     console.log(port);
-     port.onMessage.addListener(function(message,sender){
-       console.log(message, sender);
-      if(message.greeting === "hello"){
-        alert(message.greeting);
-      }
-    });
-    this.setState( {port: port });
+  if( isExtension ){
+
+    port = chrome.runtime.connect({name: 'someMessage'} );
+    console.log(port);
+    port.onMessage.addListener(function(message,sender){
+      console.log(message, sender);
+     if(message.greeting === "hello"){
+       alert(message.greeting);
+     }
+   });
+   this.setState( {port: port });
+  }
   }
   
   
@@ -284,57 +287,7 @@ class PorksUI extends React.Component{
       <Manifiesto manifiesto={ this.state.manifiesto}/>
       </Row>
       <Row>
-        <PorksWrapper >
-          <Col sm={1} alignItems='center' justifyContent='center'>
-            <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[4] } 
-            name='puerco4' 
-            src={isExtension ? puercoURL4 : puerco4 } />        
-          </Col>
-          <Col sm={2} alignItems='center' justifyContent='center'>
-            <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[7] } 
-            name='puerco7' 
-            src={ isExtension ? puercoURL7 : puerco7 } />
-          </Col>
-          <Col sm={2} alignItems='center' justifyContent='center'>
-            <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[1] } 
-            name='puerco1' 
-            src={ isExtension ? puercoURL1 : puerco1 } />
-          </Col>
-          <Col sm={2} alignItems='center' justifyContent='center'>
-            <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[3] } 
-            name='puerco3' 
-            src={ isExtension ? puercoURL3 : puerco3 } />       
-          </Col>
-          <Col sm={2} alignItems='center' justifyContent='center'>
-          <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[5] } 
-            name='puerco5' 
-            src={ isExtension ? puercoURL5 : puerco5 } />
-          </Col>
-          <Col sm={2} alignItems='center' justifyContent='center'>
-            <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[6] } 
-            name='puerco6' 
-            src={ isExtension ? puercoURL6 : puerco6 } />
-          </Col>
-          <Col sm={1} alignItems='center' justifyContent='center'>
-            <PorkItem 
-            onClick={ this.selectPork }
-            pork={ this.state.porks[2] } 
-            name='puerco2' 
-            src={ isExtension ? puercoURL2 : puerco2 } />
-          </Col>
-        </PorksWrapper>
+        <AnimatedPork/>
       </Row>
     </React.Fragment>
     )
