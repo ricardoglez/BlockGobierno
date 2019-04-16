@@ -5,7 +5,7 @@
 
 import { blockOverlay } from 'templates/blockOverlay.js';
 
-
+import { isExtension } from '../components/PorksUI/PorksUI';
 const createBlockOverlay = ( ) => {
   console.log('injecting...');
 
@@ -25,16 +25,17 @@ const createBlockOverlay = ( ) => {
     overlay.style.top = '35px';
     overlay.style.paddingTop = '30px';
     overlay.style.zIndex = '60';
-    overlay.style.background = 'rgba(0,0,0,.8)';
+    if( isExtension){
+      overlay.style.background = 'rgba(0,0,0,.8)';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+      document.body.style.overflow = 'hidden';
+      document.body.appendChild( overlay );
+      document.body.appendChild.innerHTML =  blockOverlay ;
+    }
 
 
-    document.body.style.width = '100%';
-    document.body.style.height = '100%';
-    document.body.style.overflow = 'hidden';
-    document.body.appendChild( overlay );
 
-
-    document.body.appendChild.innerHTML =  blockOverlay ;
 
 
     resolve( { success: true } )

@@ -13,9 +13,9 @@ if( isExtension ){
   alertURL = chrome.extension.getURL("images/alert.png");
 }
 
-const AlertWrapper = styled(Col)`
+const AlertWrapper = styled( Col )`
   background:#EAEAEA;
-  width:80%;
+  width:50%;
   padding:4px;
   border-radius:5px;
   drop-shadow: 0px 0px 0px 5px #fff ;
@@ -30,19 +30,6 @@ const Alert = styled.h3`
   margin-bottom:0px;
 `;
 
-const Footer = styled.footer`
-
-  display: flex ;
-  margin-top:20px;
-  justify-content:center;
-  align-items: center;
-`;
-
-const Small = styled.small`
-color:#ddd;
-  font-size:35%;
-  font-weight:100;
-`;
 
 const Message = styled.h6`
   font-size: .3em ;
@@ -74,7 +61,11 @@ class Main extends React.Component{
 
     this.handleShowPlugin = ()=>{
       console.log('Clicked Change ');
-      this.setState({ show: !this.state.show });
+      this.setState({ show: !this.state.show }, () => {
+        let element = document.getElementById("blockOverlay");
+        element.parentNode.removeChild(element);
+      });
+
     }
   }
 
@@ -83,7 +74,7 @@ class Main extends React.Component{
       return  null
     }
     return (
-      <div className='container' style={ {height: '100%' } }>
+      <div  style={ {height: '100%' } }>
         <Row>
           <CloseButton onClick={ this.handleShowPlugin }>Escape</CloseButton>
           <AlertWrapper>
@@ -107,9 +98,6 @@ class Main extends React.Component{
           </AlertWrapper>
         </Row>
         <PorksUI/>
-        <Footer>
-          <Small> El Manifiesto Post-futurista, Franco Berardi, Febrero 2009  </Small>
-        </Footer>
       </div>
   
     )
