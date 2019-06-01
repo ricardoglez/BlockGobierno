@@ -343,13 +343,13 @@ class PorksUI extends React.Component{
     this.initializePorks();
   if( isExtension ){
 
-    port = chrome.runtime.connect({name: 'someMessage'} );
-    console.log(port);
-    port.onMessage.addListener(function(message,sender){
-      console.log(message, sender);
-     if(message.greeting === "hello"){
-       alert(message.greeting);
-     }
+    // port = chrome.runtime.connect({name: 'someMessage'} );
+    // console.log(port);
+    // port.onMessage.addListener(function(message,sender){
+    //   console.log(message, sender);
+    //  if(message.greeting === "hello"){
+    //    alert(message.greeting);
+    //  }
    });
    this.setState( {port: port });
   }
