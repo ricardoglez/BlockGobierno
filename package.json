@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@svgr/cli": "^4.2.0",
+    "@svgr/cli": "^4.3.0",
     "@svgr/plugin-jsx": "^4.2.0",
     "@webcomponents/webcomponentsjs": "^2.2.7",
     "babel-preset-react": "^6.24.1",

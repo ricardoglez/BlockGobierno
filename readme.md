@@ -1,5 +1,5 @@
 <h2> BlockGob #1 </h2>
-
+<h3>Puercos post-futuristas</h3>
 <p>
 Esta extensión de Chrome tiene como finalidad intervenir las páginas del gobierno mexicano <b>( gob.mx )</b> como un gesto poético similar al grafitti o a intervenciones públicas con impacto social.
 </p>
@@ -10,4 +10,4 @@ En este caso concretamente se utiliza el Manifiesto post-futurista de Franco Ber
 <img src='./src/images/www.gob.mx_ (2).png' style="max-height:'150px' width:auto;">
 
 
-<strong>erreGe</strong>
+<strong>errege @ 2019 </strong>
