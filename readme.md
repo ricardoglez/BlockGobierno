@@ -1,6 +1,7 @@
 <h2> BlockGob #1 </h2>
+<h3>Puercos post-futuristas</h3>
 <section>
-  <h3>Puercos post-futuristas</h3>
+  <h4>Descripción</h4>
   <div style='font-size:.8em;'>  
     <p>
     Esta extensión de Chrome tiene como finalidad intervenir las páginas del gobierno mexicano <b>( gob.mx )</b> como un gesto poético similar al grafitti o a intervenciones públicas con impacto social.
@@ -11,8 +12,8 @@
   </div>
 </section>
 <section>
-    <h4>Instrucciones para instalar la extensión.</h4>
-    <div style='font-size:.8em;'>
+  <h4>Instrucciones para instalar la extensión.</h4>
+  <div style='font-size:.8em;'>
     <ol>
       <li>
       Clonar o Forkear el repositorio en la máquina del usuario. 
@@ -37,8 +38,8 @@
         Dar clic en cargar paquete y seleccionar la carpeta <strong> build </strong>
       </li>
     </ol>
-    </div>
-  </section>
+  </div>
+</section>
 
 <img src='./src/images/www.gob.mx_ (2).png' style="max-height:'150px' width:auto;">
 
